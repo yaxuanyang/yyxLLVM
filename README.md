@@ -6,14 +6,23 @@
 2、将FunctionPass *createX86MachineInstrAddPass();添加到X86.h中
 
 3、添加到X86TargetMachine.cpp中：
+
 extern "C" void LLVMInitializeX86Target(){
+
 ······
+
 initializeX86MachineInstrAddPass(PR);
+
 }
+
 ·······
+
 void X86PassConfig::addPreEmitPass(){
+
 ······
+
 addPass(createX86MachineInstrAddPass());
+
 }
 
 4、在llvm/include/llvm/InitializePasses.h中添加void initializeX86MachineInstrAddPass(PassRegistry&);
