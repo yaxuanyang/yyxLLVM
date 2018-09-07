@@ -1,5 +1,6 @@
 # yyxLLVM
 使用MIR对代码插桩
+
 1、将X86MachineInstrAdd.cpp文件移动到源码llvm/lib/Target/X86文件夹，并添加注册到CMakeLists.txt
 
 2、将FunctionPass *createX86MachineInstrAddPass();添加到X86.h中
